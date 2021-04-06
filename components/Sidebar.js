@@ -1,7 +1,8 @@
-import { Avatar, IconButton } from '@material-ui/core'
+import { Avatar, Button, IconButton } from '@material-ui/core'
 import styled from "styled-components"
 import ChatIcon from '@material-ui/icons/Chat'
 import MoreVertIcon from '@material-ui/icons/MoreVert'
+import SearchIcon from '@material-ui/icons/Search'
 
 function Sidebar() {
   return (
@@ -19,6 +20,15 @@ function Sidebar() {
           </IconButton>
         </IconContainer>
       </Header>
+
+      <Search>
+        <SearchIcon />
+        <SearchInput placeholder="Search in chats" />
+      </Search>
+
+      <SidebarButton>
+        Start a new chat
+      </SidebarButton>
     </Container>
   )
 }
@@ -42,6 +52,29 @@ const Header = styled.div`
 
 const UserAvatar = styled(Avatar)`
   cursor: pointer;
+
+  :hover {
+    opacity: 0.8;
+  }
 `
 
 const IconContainer = styled.div``
+
+const Search = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 2px;
+`
+
+const SearchInput = styled.input`
+  outline-width: 0;
+  border: none;
+  flex: 1;
+`
+
+const SidebarButton = styled(Button)`
+  width: 100%;
+  border-top: 1px solid whitesmoke;
+  border-bottom: 1px solid whitesmoke;
+`
